@@ -1,0 +1,187 @@
+.container1{
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    300deg,
+    #604c71,
+    #905dba,
+    #7d00e4,
+    #7738aa,
+    #8524d5
+  );
+
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* animação do gradiente */
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+
+/* glow neon */
+.container1::before{
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+
+  background: #a100ff;
+
+  filter: blur(200px);
+  opacity: 0.5;
+
+  top: 20%;
+  left: 30%;
+
+  pointer-events: none;
+}
+
+
+/* grid */
+.container2{
+  position: absolute;
+  inset: 0;
+  
+  background-image: url("/gradeS.png");
+  min-height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.25;
+
+  z-index: 0;
+}
+
+
+/* conteúdo */
+.divprincipal1{
+  
+  height: 200px;
+
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  border-radius: 10px;
+  background: rgba(225,225,225,0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(225,225,225,0.3);
+  
+  position: relative;
+  z-index: 2;
+
+  color: white;
+  padding: 100px;
+}
+
+
+.foto_minha{
+  position: absolute;
+  width: auto;
+  height: 90px;
+
+  margin-left: -90px;
+  margin-top: 0px;
+}
+
+.fast{
+  position: absolute;
+  margin-top: -95px;
+  margin-left: -90px;
+
+}
+  
+.linha{
+  position: absolute;
+  height: 3px;
+  color: rgba(225, 225, 225, 0.3);
+
+  transform: rotate(270deg);
+  width: 180px;
+  margin-left: -60px;
+
+}
+
+.texto1{
+  position: absolute;
+  width: 300px;
+  margin-left: 40px;
+  font-size: 15px;
+  margin-top: -90px;
+
+}
+
+
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+
+.divprincipal2{
+  
+  height: 200px;
+
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: rgba(225,225,225,0.5);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(225,225,225,0.3);
+  
+  position: relative;
+  z-index: 2;
+
+  color: white;
+  padding: 100px;
+}
+
+.repos{
+  height: 100px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 20px;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+  padding: 0px;
+
+  background: rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(10px);
+    border: 2px solid rgba(225,225,225,0.3);
+  border-radius: 10px;
+}
+
+.git_logo1{
+  position: sticky;
+  top: 5;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  margin-left: 210px;
+  
+}
+
+.link_principal{
+  position: absolute;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-left: 5px;
+
+  font-weight: bold;
+  
+}
+
+.alllinks{
+  margin-left: 5px;
+}
