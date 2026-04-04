@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   return (
@@ -26,49 +26,29 @@ export default function Home() {
           Universidade Catolica<br /> de Pernambuco<br />
         </p>
       </div>
-      <div className={styles.divprincipal3}>
-          <p className={styles.p1}>
-            Sou estudante de <span className={styles.destaque}>Ciência da Computação</span> na{" "}
-            <span className={styles.destaque}>Universidade Católica de Pernambuco</span>, 
-            onde venho construindo não apenas uma{" "}
-            <span className={styles.destaque}>base técnica sólida</span>, mas também desenvolvendo{" "}
-            <span className={styles.destaque}>habilidades interpessoais importantes</span> 
-            para o trabalho em equipe e para o ambiente profissional. 
-            Considero-me uma pessoa <span className={styles.destaque}>sociável</span>, 
-            com facilidade de <span className={styles.destaque}>comunicação e colaboração</span>, 
-            sempre buscando aprender com as pessoas ao meu redor. 
-            Minha principal motivação é o <span className={styles.destaque}>desejo constante de evoluir</span>, 
-            tanto no âmbito acadêmico quanto pessoal.
-            
-            <br /><br />
 
-            Atualmente, participo de um{" "}
-            <span className={styles.destaque}>projeto de iniciação científica</span>, 
-            experiência que tem sido extremamente{" "}
-            <span className={styles.destaque}>enriquecedora</span> e prazerosa. 
-            Além de ampliar meus conhecimentos, esse projeto tem me proporcionado contato com{" "}
-            <span className={styles.destaque}>novas ideias, metodologias e desafios</span>, 
-            tornando o processo de aprendizado ainda mais dinâmico e estimulante.
-            
-            <br /><br />
+      <div className={styles.divprincipal4}>
+        <p className={styles.p1}>
+          Sou estudante de <span className={styles.destaque}>Ciência da Computação</span> na{" "}
+          <span className={styles.destaque}>Universidade Católica de Pernambuco</span>, 
+          onde venho construindo não apenas uma{" "}
+          <span className={styles.destaque}>base técnica sólida</span>, mas também desenvolvendo{" "}
+          <span className={styles.destaque}>habilidades interpessoais importantes</span>.
+          
+          <br /><br />
 
-            No campo técnico, possuo experiência com linguagens como{" "}
-            <span className={styles.destaque}>C, Python e Java</span>, além de conhecimentos em{" "}
-            <span className={styles.destaque}>Figma, React, Next.js e MySQL</span>. 
-            Também tenho familiaridade com{" "}
-            <span className={styles.destaque}>modelagem de sistemas</span>, utilizando{" "}
-            <span className={styles.destaque}>UML e BPMN</span>. 
-            Busco constantemente integrar esses conhecimentos em{" "}
-            <span className={styles.destaque}>projetos práticos</span>, 
-            sempre com o objetivo de aprimorar minhas habilidades e me preparar para os desafios do mercado de tecnologia.
-          </p>
+          Atualmente, participo de um{" "}
+          <span className={styles.destaque}>projeto de iniciação científica</span>, 
+          experiência enriquecedora.
+
+          <br /><br />
+
+          No campo técnico, possuo experiência com{" "}
+          <span className={styles.destaque}>C, Python e Java</span>, além de{" "}
+          <span className={styles.destaque}>React, Next.js e MySQL</span>.
+        </p>
       </div>
 
-
-      <div className={styles.teste}>
-
-      </div>
-      
       <div className={styles.repos}>
         <img className={styles.git_logo1} src="git_logo.png" alt="logo git" />
 
@@ -80,38 +60,28 @@ export default function Home() {
         >
           My links to GitHub
         </a>
-
-        <a className={styles.alllinks} href="#" target="_blank">
-          ⚪ ▶ Projeto em C
-        </a>
-        <a className={styles.alllinks} href="#" target="_blank">
-          ⚪ ▶ Stonks-viewer
-        </a>
-        <a className={styles.alllinks} href="#" target="_blank">
-          ⚪ ▶ Aprendendo Arvores
-        </a>
       </div>
 
-
-      <div id="forca" className={styles.divprincipal2}>
+      <div id="forca" className={styles.divprincipal3}>
         <Forca />
       </div>
     </div>
   );
 }
 
-
-
-
-
+// 🎮 JOGO DA FORCA
 function Forca() {
   const palavras = ["react", "javascript", "computador", "programacao"];
 
-  const [palavra] = useState(
-    palavras[Math.floor(Math.random() * palavras.length)]
-  );
+  const [palavra, setPalavra] = useState("");
   const [letrasCorretas, setLetrasCorretas] = useState([]);
   const [letrasErradas, setLetrasErradas] = useState([]);
+
+  useEffect(() => {
+    const aleatoria =
+      palavras[Math.floor(Math.random() * palavras.length)];
+    setPalavra(aleatoria);
+  }, []);
 
   function tentarLetra(letra) {
     if (
@@ -126,11 +96,14 @@ function Forca() {
     }
   }
 
-  const venceu = palavra
-    .split("")
-    .every((l) => letrasCorretas.includes(l));
+  const venceu =
+    palavra &&
+    palavra.split("").every((l) => letrasCorretas.includes(l));
 
   const perdeu = letrasErradas.length >= 6;
+
+  // 🔑 evita erro de hydration
+  if (!palavra) return null;
 
   return (
     <div className={styles.forca}>
