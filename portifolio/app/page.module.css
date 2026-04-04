@@ -188,7 +188,7 @@
 
 .divprincipal_forca{
   
-  height: 550px;
+  height: 600px;
 
   margin-right: 5px;
   margin-left: 5px;
@@ -277,4 +277,18 @@
 .teclado button:disabled {
   background-color: #555;
   cursor: not-allowed;
+}
+
+.reset {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #5F008A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reset:hover {
+  background-color: #7d00e4;
 }

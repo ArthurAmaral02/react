@@ -77,14 +77,20 @@ export default function Home() {
           My links to GitHub
         </a>
 
-        <a className={styles.alllinks} href="#" target="_blank">
+        <a className={styles.alllinks} href="https://github.com/ArthurAmaral02/trabalhoC" target="_blank">
           ⚪ ▶ Projeto em C
         </a>
-        <a className={styles.alllinks} href="#" target="_blank">
+        <a className={styles.alllinks} href="https://github.com/ArthurAmaral02/stonks-viewer" target="_blank">
           ⚪ ▶ Stonks-viewer
         </a>
-        <a className={styles.alllinks} href="#" target="_blank">
+        <a className={styles.alllinks} href="https://github.com/ArthurAmaral02/Java_Aprendendo" target="_blank">
           ⚪ ▶ Aprendendo Arvores
+        </a>
+        <a className={styles.alllinks} href="https://github.com/LucasMN0/Labirinto" target="_blank">
+          ⚪ ▶ Jogo de Labirinto
+        </a>
+        <a className={styles.alllinks} href="https://github.com/LettyciaDev/PROJETO-WEB-MOBILE" target="_blank">
+          ⚪ ▶ site para receitas
         </a>
       </div>
 
@@ -105,10 +111,14 @@ function Forca() {
   const [letrasCorretas, setLetrasCorretas] = useState([]);
   const [letrasErradas, setLetrasErradas] = useState([]);
 
-  useEffect(() => {
+  function gerarPalavra() {
     const aleatoria =
       palavras[Math.floor(Math.random() * palavras.length)];
     setPalavra(aleatoria);
+  }
+
+  useEffect(() => {
+    gerarPalavra();
   }, []);
 
   function tentarLetra(letra) {
@@ -124,13 +134,18 @@ function Forca() {
     }
   }
 
+  function reiniciarJogo() {
+    setLetrasCorretas([]);
+    setLetrasErradas([]);
+    gerarPalavra();
+  }
+
   const venceu =
     palavra &&
     palavra.split("").every((l) => letrasCorretas.includes(l));
 
   const perdeu = letrasErradas.length >= 6;
 
-  // 🔑 ESSA LINHA RESOLVE O HYDRATION
   if (!palavra) return <div className={styles.forca}></div>;
 
   return (
@@ -168,6 +183,11 @@ function Forca() {
 
       {venceu && <h3>🎉 Você venceu!</h3>}
       {perdeu && <h3>💀 Você perdeu! Palavra: {palavra}</h3>}
+
+      {/* 🔥 BOTÃO NOVO */}
+      <button onClick={reiniciarJogo} className={styles.reset}>
+        🔄 Reiniciar
+      </button>
     </div>
   );
 }
