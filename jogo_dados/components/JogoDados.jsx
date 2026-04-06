@@ -83,7 +83,7 @@ export default function JogoDados() {
 
   return (
     <div className="container">
-      <h1 className="titulo">🎲 Jogo de Dados</h1>
+      <h1 className="titulo"> Jogo de Dados</h1>
 
       <h2 className="rodada">Rodada: {rodada}</h2>
 
