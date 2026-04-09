@@ -26,6 +26,11 @@ Atualmente, a autenticação está implementada, enquanto as funcionalidades de 
 
 ---
 
+#Atenção!!!!!!!
+
+O repositório atual não foi o repositório que iniciamos o projeto. Por questões de organização, o nosso código foi movido para um novo repositorio (o atual), por esse motivo, a quantidade de comits por aluno pode causar estranheza. 
+Link do repositorio antigo -> https://github.com/LettyciaDev/PROJETO-WEB-MOBILE
+
 ## Funcionalidades
 - Cadastro de usuários  
 - Login de usuários  
