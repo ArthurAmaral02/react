@@ -1,7 +1,10 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { CardImage } from "../components/cards/cardImage";
 import styles from "./dicas.module.css";
+import navStyles from "../principal/principal.module.css"; // importa estilos da navbar
 
 const TIPS = [
   {
@@ -66,6 +69,23 @@ export default function Dicas() {
           ))}
         </div>
       </main>
+
+      {/* NAVBAR (igual à Home) */}
+      <nav className={navStyles.navbar}>
+        <div className={navStyles.navbarContainer}>
+          <Link href="/principal">
+            <Image src="/home.png" alt="home" width={24} height={24} />
+            <span>Menu</span>
+          </Link>
+        </div>
+        
+        <div className={navStyles.navbarContainer}>
+          <Link href="/dicas">
+            <Image src="/tip.png" alt="dicas" width={24} height={24} />
+            <span>Dicas</span>
+          </Link>
+        </div>
+      </nav>
     </div>
   );
 }
