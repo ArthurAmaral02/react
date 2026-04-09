@@ -9,9 +9,7 @@ if (!Parse.serverURL) {
   Parse.serverURL = "https://parseapi.back4app.com/";
 }
 
-// ============================
-// SALVAR RECEITA
-// ============================
+
 export const salvarReceita = async (dados, currentUser) => {
   if (!currentUser) throw new Error("Usuário não definido");
 
