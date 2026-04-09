@@ -38,6 +38,20 @@ export default function Dicas() {
     <div className="container">
       <header style={{ padding: 20 }}>
         <div>
+        <Link href="/principal" style={{ textDecoration: "none" }}>
+            <button
+              style={{
+                background: "none",
+                border: "none",
+                fontSize: 18,
+                cursor: "pointer",
+                color: "#1b5e20",
+              }}
+            >
+              ← Voltar para a pagina principal
+              
+            </button>
+          </Link>
           <h1 
             style={{
               fontSize: "clamp(1.6rem, 5vw, 2.2rem)",
