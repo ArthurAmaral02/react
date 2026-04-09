@@ -10,7 +10,7 @@ A aplicação foi construída utilizando **React** ,**Next.js** e **CSS**, conta
 
 - Lettycia Vitoria
 - Anna Beatriz
-- Quezia Costa
+- Quezia B. S. Costa
 - Arthur Amaral
 - Lucas Fernandes
 
