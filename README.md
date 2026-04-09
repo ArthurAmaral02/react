@@ -8,7 +8,7 @@ A aplicação foi construída utilizando **React** ,**Next.js** e **CSS**, conta
 
 ## Integrantes
 
-- Lettycia Vitoria
+- Lettycia Vitória Melo de França
 - Anna Beatriz
 - Quezia B. S. Costa
 - Arthur Amaral
