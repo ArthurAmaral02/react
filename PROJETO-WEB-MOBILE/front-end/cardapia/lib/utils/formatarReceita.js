@@ -16,5 +16,5 @@ export async function prepararESalvarReceita(receitaOriginal, categoria) {
   const currentUser = Parse.User.current();
   if (!currentUser) throw new Error("Usuário não logado");
 
-  return salvarReceita(receitaFormatada, currentUser); // passa o usuário logado
+  return salvarReceita(receitaFormatada, currentUser);
 }

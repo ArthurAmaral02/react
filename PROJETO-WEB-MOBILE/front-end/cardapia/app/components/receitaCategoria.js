@@ -19,19 +19,19 @@ export default function ReceitaCategoria({ tipo }) {
 
   const [userId, setUserId] = useState(null);
 
-  // Estados Locais
+
   const [receitaSelecionada, setReceitaSelecionada] = useState(null);
   const [editandoId, setEditandoId] = useState(null);
   const [novoTitulo, setNovoTitulo] = useState("");
 
-  // Queries (Busca de dados)
+
   const { data, isLoading, error } = useQuery({
     queryKey: ["receitas", tipo, userId],
     queryFn: () => buscarReceitas(tipo, userId),
     enabled: mounted && !!userId,
   });
 
-  // Mutações (Excluir)
+
   const mutationExcluir = useMutation({
     mutationFn: deletarReceita,
     onSuccess: () => {
@@ -39,7 +39,7 @@ export default function ReceitaCategoria({ tipo }) {
     },
   });
 
-  // Mutações (Editar)
+
   const mutationEditar = useMutation({
     mutationFn: ({ objectId, titulo }) =>
       atualizarReceita(objectId, { titulo }),

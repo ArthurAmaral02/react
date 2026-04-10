@@ -5,7 +5,7 @@ import Link from "next/link";
 import Intro from "../components/intro";
 import styles from "../principal/principal.module.css";
 
-// Configuração das categorias de refeição
+
 const MEALS = [
   { href: "/refeicoes/cafe",   src: "/cafe.png",   alt: "café da manhã", label: "Café da manhã", accent: true  },
   { href: "/refeicoes/lanche", src: "/lanche.png", alt: "lanches",       label: "Lanches",       accent: false },

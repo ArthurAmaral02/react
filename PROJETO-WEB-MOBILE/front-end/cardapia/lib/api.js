@@ -1,10 +1,10 @@
 import Parse from "parse";
 
-// Inicialização Parse
+
 if (!Parse.serverURL) {
   Parse.initialize(
-    "mmdgUUMfzBrInhwWfSDp3oFJW3gJGHyoXE4smW0Y", // APP_ID
-    "E5v7T9NIy5N7rFWxE82e3RFooyN8EG7HfIgXeR03"  // JS_KEY
+    "mmdgUUMfzBrInhwWfSDp3oFJW3gJGHyoXE4smW0Y",
+    "E5v7T9NIy5N7rFWxE82e3RFooyN8EG7HfIgXeR03"  
   );
   Parse.serverURL = "https://parseapi.back4app.com/";
 }
@@ -22,7 +22,7 @@ export const salvarReceita = async (dados, currentUser) => {
   receita.set("tempo_preparo", dados.tempo_preparo || "");
   receita.set("calorias", dados.calorias || 0);
   receita.set("categoria", dados.categoria || "");
-  receita.set("usuario", currentUser); // associa ao usuário logado
+  receita.set("usuario", currentUser); 
 
   try {
     const resultado = await receita.save();
@@ -33,10 +33,7 @@ export const salvarReceita = async (dados, currentUser) => {
   }
 };
 
-// ============================
-// BUSCAR RECEITAS
-// ============================
-// No seu arquivo api.js
+
 
 export const buscarReceitas = async (categoria, userId) => {
   if (!userId) return [];
@@ -44,20 +41,20 @@ export const buscarReceitas = async (categoria, userId) => {
   const Receita = Parse.Object.extend("Receita");
   const query = new Parse.Query(Receita);
 
-  // MUDANÇA CRÍTICA: Transformar o ID string em um Pointer
+  
   const userPointer = {
     __type: "Pointer",
     className: "_User",
     objectId: userId
   };
 
-  query.equalTo("usuario", userPointer); // Agora ele filtra corretamente o dono da receita
+  query.equalTo("usuario", userPointer); 
 
   if (categoria) {
     query.equalTo("categoria", categoria);
   }
 
-  query.descending("createdAt"); // Traz as mais novas primeiro
+  query.descending("createdAt"); 
 
   try {
     const results = await query.find();
@@ -68,9 +65,7 @@ export const buscarReceitas = async (categoria, userId) => {
   }
 };
 
-// ============================
-// ATUALIZAR RECEITA
-// ============================
+
 export const atualizarReceita = async (id, dados) => {
   if (!id) throw new Error("ID da receita é obrigatório");
 
@@ -88,9 +83,7 @@ export const atualizarReceita = async (id, dados) => {
   }
 };
 
-// ============================
-// DELETAR RECEITA
-// ============================
+
 export const deletarReceita = async (id) => {
   if (!id) throw new Error("ID da receita é obrigatório");
 

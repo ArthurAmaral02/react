@@ -23,10 +23,10 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      // Login usando Parse SDK
+
       const user = await Parse.User.logIn(email, senha);
 
-      // usuário logado com sessão salva automaticamente
+ 
       alert("Login realizado com sucesso!");
       console.log("Usuário logado:", user.get("username"));
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CardImage } from "../components/cards/cardImage";
 import styles from "./dicas.module.css";
-import navStyles from "../principal/principal.module.css"; // importa estilos da navbar
+import navStyles from "../principal/principal.module.css"; 
 
 const TIPS = [
   {

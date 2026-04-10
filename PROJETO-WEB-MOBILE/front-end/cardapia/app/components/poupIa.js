@@ -13,7 +13,7 @@ export default function PopupIA({ tipo }) {
   const [salvando, setSalvando] = useState(false);
   const [usuario, setUsuario] = useState(null);
 
-  // 🔹 Verifica usuário logado ao montar o componente
+ 
   useEffect(() => {
     const currentUser = Parse.User.current();
     setUsuario(currentUser);
@@ -76,7 +76,7 @@ export default function PopupIA({ tipo }) {
     try {
       setSalvando(true);
 
-      // Passa o ID do usuário logado
+  
       await prepararESalvarReceita(receita, tipo, usuario.id);
 
       setReceita(null);
@@ -89,7 +89,7 @@ export default function PopupIA({ tipo }) {
     }
   };
 
-  // 🔹 Se não estiver logado, mostra aviso
+
   if (!usuario) {
     return (
       <div className={styles.avisoLogin}>

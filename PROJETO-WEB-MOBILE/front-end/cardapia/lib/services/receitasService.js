@@ -28,7 +28,7 @@ export async function criarReceita(data, userId) {
 export async function listarReceitas(categoria, userId) {
   if (!userId) return [];
 
-  // 1. Montamos o objeto de busca (Query)
+
   const queryObj = {
     usuario: {
       "__type": "Pointer",
@@ -37,15 +37,15 @@ export async function listarReceitas(categoria, userId) {
     }
   };
 
-  // 2. Se houver categoria, adicionamos ao filtro
+  
   if (categoria) {
     queryObj.categoria = categoria;
   }
 
-  // 3. Transformamos o objeto em string e codificamos para a URL
+
   const where = encodeURIComponent(JSON.stringify(queryObj));
   
-  // 4. Adicionamos o parâmetro 'where' e ordenação (opcional: -createdAt traz as novas primeiro)
+
   const finalUrl = `${API_URL}?where=${where}&order=-createdAt`;
 
   try {
@@ -62,7 +62,7 @@ export async function listarReceitas(categoria, userId) {
 
     const data = await res.json();
     
-    // O Back4app sempre retorna uma lista dentro da chave 'results'
+
     return data.results || [];
   } catch (error) {
     console.error("Erro na requisição listarReceitas:", error);

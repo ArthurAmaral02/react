@@ -35,7 +35,7 @@ body {
   justify-content: center;
 }
 
-/* Lado direito */
+
 .direita {
   flex: 1;
   display: flex;
@@ -47,7 +47,7 @@ body {
   font-size: 42px;
 }
 
-/* Inputs */
+
 .inputs {
   display: flex;
   flex-direction: column;
@@ -68,14 +68,14 @@ body {
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
 }
 
-/* Botões */
+
 .actions {
   display: flex;
   margin-top: 10px;
   gap: 10px;
 }
 
-/* Botão principal */
+
 .btn-principal {
   padding: 12px 28px;
   background-color: #4caf50;
@@ -128,9 +128,9 @@ body {
 
 
 
-/* ================= RESPONSIVIDADE ================= */
 
-/* Tablets */
+
+
 @media (max-width: 1024px) {
   .card {
     padding: 30px;
@@ -142,7 +142,7 @@ body {
   }
 }
 
-/* Celulares */
+
 @media (max-width: 768px) {
   .page-background {
     padding: 20px;
@@ -192,7 +192,7 @@ body {
   }
 }
 
-/* Celulares pequenos */
+
 @media (max-width: 480px) {
   .card {
     padding: 20px;
