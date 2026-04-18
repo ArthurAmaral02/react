@@ -28,7 +28,7 @@ export async function POST(req) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-goog-api-key": "AIzaSyBPnLzE-rPNND-3cnOI-QuBjCVHPDrcMPM",
+          "x-goog-api-key": "AIzaSyDYYTryg2N0f2c2BfWRcc7_A_7RqyHrJ4A",
         },
         body: JSON.stringify({
           contents: [
